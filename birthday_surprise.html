@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A beautiful and surprising birthday message.">
+    <title>Birthday Surprise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #0a0c27; color: #ffffff; overflow: hidden; }
+        #loader { display: flex; justify-content: center; align-items: center; height: 100vh; }
+        #countdown { display: none; font-size: 3rem; text-align: center; }
+        #message { display: none; text-align: center; padding: 20px; }
+        #message h1 { font-size: 3rem; margin-bottom: 20px; animation: glow 1s ease-in-out infinite alternate; }
+        #message p { font-size: 1.5rem; margin-top: 10px; }
+
+        @keyframes glow { 0% { color: #fff; text-shadow: 0 0 10px #fff, 0 0 20px #f0f, 0 0 30px #f0f, 0 0 40px #f0f; } 100% { color: #f0f; text-shadow: 0 0 20px #fff, 0 0 30px #f0f, 0 0 40px #f0f, 0 0 50px #f0f; } }
+    </style>
+</head>
+<body>
+    <div id="loader">
+        <h1>🎉 Loading Your Surprise... 🎉</h1>
+    </div>
+
+    <div id="countdown">✨ Surprise in <span id="time">3</span>... ✨</div>
+
+    <div id="message">
+        <h1>🎉 MANY MANY HAPPY RETURNS OF THE DAY 🎉</h1>
+        <p>🎂🎂🎂 Dear GUNJAN PANT 🎂🎂🎂</p>
+        <p>✨ Wishing you a day filled with joy, laughter, and endless surprises! ✨</p>
+    </div>
+
+    <script>
+        setTimeout(() => { document.getElementById('loader').style.display = 'none'; document.getElementById('countdown').style.display = 'block';
+            let timeLeft = 3;
+            const timer = setInterval(() => {
+                timeLeft--;
+                document.getElementById('time').innerText = timeLeft;
+                if (timeLeft === 0) {
+                    clearInterval(timer);
+                    document.getElementById('countdown').style.display = 'none';
+                    document.getElementById('message').style.display = 'block';
+                }
+            }, 1000);
+        }, 2000);
+    </script>
+</body>
+</html>
